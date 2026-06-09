@@ -184,5 +184,16 @@ body {
     text-align: center;
     color: #333;
     width: 20rem;
-    
+}
+
+.social-card {
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    text-align: center;
+    color: #333;
+    width: 70%;
+}
+
+.social-card p {
+    margin-top: 1rem;
 }

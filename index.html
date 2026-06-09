@@ -57,7 +57,7 @@
         <img src="resources/images/toy.png">
     </div>
 
-    <div class="socials">
+    <div class="socials" data-bs-toggle="modal" data-bs-target="#socialsModal">
         <img src="resources/images/socials.png">
     </div>
 
@@ -141,8 +141,62 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="modal fade" id="socialsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Socials</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col text-center">
+                            <img src="resources/images/facebook.png" style="width: 60px; height: 60px;">
+                            <p>Facebook</p>
+                        </div>
+
+                        <div class="col text-center">
+                            <img src="resources/images/instagram.png" style="width: 60px; height: 60px;">
+                            <p>Instagram</p>
+                        </div>
+
+                        <div class="col text-center">
+                            <img src="resources/images/linkin.png" style="width: 60px; height: 60px;">
+                            <p>LinkedIn</p>
+                        </div>
+
+                        <div class="col text-center">
+                            <img src="resources/images/github.png" style="width: 60px; height: 60px;">
+                            <p>Github</p>
+                        </div>
+
+                        <div class="col text-center mt-2">
+                            <img src="resources/images/x.png" style="width: 60px; height: 55px;">
+                            <p>X</p>
+                        </div>
+
+                        <div class="col text-center">
+                            <img src="resources/images/tiktok.png" style="width: 60px; height: 60px;">
+                            <p>Tiktok</p>
+                        </div>
+                    </div>
+
+                    <div class="container text-center d-flex align-items-center justify-content-center">
+                        <div class="social-card">
+                            <p>Clicking any of this icons will open a new tab!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
