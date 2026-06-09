@@ -1,0 +1,155 @@
+* {
+    font-family: 'Playpen Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url('../images/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.intro-container {
+    margin-top: 25rem;
+    font-size: 3rem;
+    margin-left: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.name {
+    color: #FFA500;
+    z-index: 2;
+}
+
+.welcome {
+    position: relative;
+    z-index: 2;
+    margin-right: 10rem;
+}
+
+.explore {
+    margin-top: 7rem;
+    position: relative;
+    z-index: 2;
+}
+
+.laptop {
+    position: absolute;
+    top: 16rem;
+    right: 22rem;
+    z-index: 1;
+    width: 51rem;
+}
+
+.laptop img {
+    width: 100%;
+}
+
+.id-lace {
+    position: absolute;
+    z-index: 2;
+    right: 33rem;
+    bottom: 17.4rem;
+}
+
+.picture {
+    position: absolute;
+    z-index: 3;
+    bottom: 11rem;
+    right: 31.5rem;
+}
+
+.books {
+    position: absolute;
+    bottom: 37rem
+}
+
+.toy {
+    position: absolute;
+    bottom: 37rem;
+    left: 15rem;
+}
+
+.socials {
+    position: absolute;
+    bottom: 22.8rem;
+    left: 2rem;
+}
+
+.socials img {
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.socials img:hover {
+    filter: drop-shadow(0 0 10px #F5F5DC) drop-shadow(0 0 20px #F5F5DC);
+}
+
+.about {
+    position: absolute;
+    bottom: 22.6rem;
+    left: 15rem;
+}
+
+.about img {
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.about img:hover {
+    filter: drop-shadow(0 0 10px #F5F5DC) drop-shadow(0 0 20px #F5F5DC);
+}
+
+.contact {
+    position: absolute;
+    bottom: 0.1rem;
+    left: 8rem;
+}
+
+.contact img {
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.contact img:hover {
+    filter: drop-shadow(0 0 10px #F5F5DC) drop-shadow(0 0 20px #F5F5DC);
+}
+
+.flower {
+    position: absolute;
+    bottom: 37.1rem;
+    right: 5rem;
+}
+
+.awards {
+    position: absolute;
+    bottom: 24.2rem;
+    right: 10rem;
+}
+
+.awards img {
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.awards img:hover {
+    filter: drop-shadow(0 0 10px #F5F5DC) drop-shadow(0 0 20px #F5F5DC);
+}
+
+.projects {
+    position: absolute;
+    bottom: 12rem;
+    right: 4rem;
+}
+
+.projects img {
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.projects img:hover {
+    filter: drop-shadow(0 0 10px #F5F5DC) drop-shadow(0 0 20px #F5F5DC);
+}
