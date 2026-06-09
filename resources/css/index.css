@@ -64,7 +64,7 @@ body {
 
 .books {
     position: absolute;
-    bottom: 37rem
+    bottom: 37rem;
 }
 
 .toy {
@@ -152,4 +152,37 @@ body {
 
 .projects img:hover {
     filter: drop-shadow(0 0 10px #F5F5DC) drop-shadow(0 0 20px #F5F5DC);
+}
+
+.modal-header {
+    background-color: #424242;
+}
+
+.modal-title {
+    color: white;
+}
+
+.modal-body {
+    padding-left: 3rem;
+    padding-right: 2rem;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.btn-close-white {
+    color: white;
+}
+
+.about-info {
+    margin-left: 1rem;
+}
+
+.skill-card {
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    color: #333;
+    width: 20rem;
+    
 }
