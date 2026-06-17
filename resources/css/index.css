@@ -1,209 +1,234 @@
+/* Global Reset and Typography */
 * {
     font-family: 'Playpen Sans', sans-serif;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-image: url('../images/bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
+    background-color: #1a1a1a;
+    overflow: hidden; /* Prevent default browser window double scrolls */
+    min-height: 100vh;
 }
 
-.intro-container {
-    margin-top: 25rem;
-    font-size: 3rem;
-    margin-left: 1rem;
+/* ================= THE PANORAMIC SLIDER SYSTEM ================= */
+.room-wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; 
+}
+
+/* Hide standard browser track layouts */
+.room-wrapper::-webkit-scrollbar {
+    display: none;
+}
+.room-wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* FIX: "background-size: cover" prevents image stretching.
+   "aspect-ratio" locks it perfectly into place so it never distorts.
+*/
+.room-scene {
+    height: 100vh;
+    min-width: 177.78vh; /* Enforces crisp 16:9 widescreen proportions relative to height */
+    background-image: url('../images/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover; /* Keeps background from warping/stretching */
+    background-position: center center;
+    display: flex;
+    flex-direction: row;
     position: relative;
+}
+
+/* Splitting background section anchors across the landscape map */
+.room-section {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     z-index: 2;
+}
+
+.left-shelves-section {
+    width: 25%;
+    padding-left: 4.5rem;
+    padding-top: 6rem;
+}
+
+.center-content-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-shelves-section {
+    width: 25%;
+    padding-right: 4.5rem;
+    padding-top: 6rem;
+    align-items: flex-end;
+}
+
+/* ================= NAVIGATION ARROWS ================= */
+.nav-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    background-color: rgba(254, 165, 0, 0.85); 
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+    display: none; /* Managed by JS visibility rules */
+    z-index: 999;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.nav-arrow:hover {
+    background-color: rgba(254, 165, 0, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.left-arrow { left: 25px; }
+.right-arrow { right: 25px; }
+
+/* ================= COMPONENT ELEMENT BOUNDING BOXES ================= */
+.shelf-box {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: 150px;
+    margin-bottom: 5.5rem;
+}
+
+/* Items remain safely nested on shelf floors even when hidden */
+.shelf-box .books,
+.shelf-box .toy,
+.shelf-box .speaker,
+.shelf-box .flower,
+.shelf-box .socials,
+.shelf-box .about,
+.shelf-box .awards {
+    position: absolute;
+    bottom: -10px;
+}
+
+/* Grid Coordinates matching the background visual assets */
+.toy { left: 8%; width: 28%; }
+.books { right: 8%; width: 38%; }
+.socials { left: 5%; width: 38%; }
+.about { right: 8%; width: 38%; }
+.speaker { left: 12%; width: 26%; }
+.flower { right: 12%; width: 24%; }
+.awards { left: 50%; transform: translateX(-50%); width: 44%; }
+
+/* Table Level Absolute Targets */
+.desk-item-left {
+    position: absolute;
+    bottom: 5vh;
+    left: 5rem;
+    width: 180px;
+}
+.desk-item-right {
+    position: absolute;
+    bottom: 4vh;
+    right: 5rem;
+    width: 220px;
+}
+.contact { width: 100%; }
+.projects { width: 100%; }
+
+.room-scene img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Glowing Interactive Item Settings */
+.socials img, .about img, .contact img, .awards img, .projects img {
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+.socials img:hover, .about img:hover, .contact img:hover, .awards img:hover, .projects img:hover {
+    transform: scale(1.04);
+    filter: drop-shadow(0 0 10px #F5F5DC) drop-shadow(0 0 20px #F5F5DC);
+}
+
+/* ================= CENTRAL GRAPHICS TEXT ================= */
+.intro-container {
+    margin-bottom: 2rem;
+}
+
+.alignment-text h1 {
+    font-size: 3.5rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
 .name {
     color: #FFA500;
-    z-index: 2;
 }
 
-.welcome {
-    position: relative;
-    z-index: 2;
-    margin-right: 10rem;
+.welcome h4 {
+    font-size: 1.8rem;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
 }
 
 .explore {
-    margin-top: 7rem;
-    position: relative;
-    z-index: 2;
+    margin-top: 1.5rem;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
 }
 
-.laptop {
-    position: absolute;
-    top: 16rem;
-    right: 22rem;
-    z-index: 1;
-    width: 51rem;
-}
-
-.laptop img {
-    width: 100%;
-}
-
-.id-lace {
-    position: absolute;
-    z-index: 2;
-    right: 33rem;
-    bottom: 17.4rem;
-}
-
-.picture {
-    position: absolute;
-    z-index: 3;
-    bottom: 11rem;
-    right: 31.5rem;
-}
-
-.books {
-    position: absolute;
-    bottom: 37rem;
-}
-
-.toy {
-    position: absolute;
-    bottom: 37rem;
-    left: 15rem;
-}
-
-.speaker {
-    position: absolute;
-    bottom: 37rem;
-    right: 15rem;
-}
-
-.socials {
-    position: absolute;
-    bottom: 22.8rem;
-    left: 2rem;
-}
-
-.socials img {
-    cursor: pointer;
-    transition: filter 0.3s ease;
-}
-
-.socials img:hover {
-    filter: drop-shadow(0 0 10px #F5F5DC) drop-shadow(0 0 20px #F5F5DC);
-}
-
-.about {
-    position: absolute;
-    bottom: 22.6rem;
-    left: 15rem;
-}
-
-.about img {
-    cursor: pointer;
-    transition: filter 0.3s ease;
-}
-
-.about img:hover {
-    filter: drop-shadow(0 0 10px #F5F5DC) drop-shadow(0 0 20px #F5F5DC);
-}
-
-.contact {
-    position: absolute;
-    bottom: 0.1rem;
-    left: 8rem;
-}
-
-.contact img {
-    cursor: pointer;
-    transition: filter 0.3s ease;
-}
-
-.contact img:hover {
-    filter: drop-shadow(0 0 10px #F5F5DC) drop-shadow(0 0 20px #F5F5DC);
-}
-
-.flower {
-    position: absolute;
-    bottom: 37.1rem;
-    right: 5rem;
-}
-
-.awards {
-    position: absolute;
-    bottom: 24.2rem;
-    right: 10rem;
-}
-
-.awards img {
-    cursor: pointer;
-    transition: filter 0.3s ease;
-}
-
-.awards img:hover {
-    filter: drop-shadow(0 0 10px #F5F5DC) drop-shadow(0 0 20px #F5F5DC);
-}
-
-.projects {
-    position: absolute;
-    bottom: 12rem;
-    right: 4rem;
-}
-
-.projects img {
-    cursor: pointer;
-    transition: filter 0.3s ease;
-}
-
-.projects img:hover {
-    filter: drop-shadow(0 0 10px #F5F5DC) drop-shadow(0 0 20px #F5F5DC);
-}
-
+/* ================= BOOTSTRAP MODALS OVERRIDES ================= */
 .modal-header {
     background-color: #424242;
 }
-
 .modal-title {
     color: white;
 }
-
 .modal-body {
-    padding-left: 3rem;
-    padding-right: 2rem;
-    max-height: 70vh;
+    max-height: 75vh;
     overflow-y: auto;
 }
-
 .btn-close-white {
-    color: white;
+    filter: invert(1);
 }
-
-.about-info {
-    margin-left: 1rem;
-}
-
 .skill-card {
     border: 2px solid #ccc;
     border-radius: 12px;
-    padding: 1rem;
+    padding: 1.2rem;
     text-align: center;
     color: #333;
-    width: 20rem;
+    background: #fff;
 }
-
 .social-card {
     border: 2px solid #ccc;
     border-radius: 12px;
-    text-align: center;
-    color: #333;
-    width: 70%;
+    background: #f9f9f9;
+    width: 100%;
+    max-width: 500px;
 }
 
-.social-card p {
-    margin-top: 1rem;
-}
-
-.second-container {
-    margin-right: 2rem;
+/* Typography Scales when viewport narrows */
+@media (max-width: 768px) {
+    .alignment-text h1 {
+        font-size: 2.5rem;
+    }
+    .welcome h4 {
+        font-size: 1.4rem;
+    }
 }
