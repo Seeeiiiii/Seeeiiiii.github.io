@@ -73,6 +73,12 @@ body {
     left: 15rem;
 }
 
+.speaker {
+    position: absolute;
+    bottom: 37rem;
+    right: 15rem;
+}
+
 .socials {
     position: absolute;
     bottom: 22.8rem;
