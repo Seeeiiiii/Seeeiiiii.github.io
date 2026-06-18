@@ -3,296 +3,239 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght=100..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&family=Playpen+Sans:wght@100..800&family=Chivo+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="resources/css/index.css">
-    <title>Portfolio</title>
+    <script src="resources/js/index.js"></script>
 </head>
 
 <body>
 
-    <button class="nav-arrow left-arrow" id="slideLeft" aria-label="Slide Left">&larr;</button>
-    <button class="nav-arrow right-arrow" id="slideRight" aria-label="Slide Right">&rarr;</button>
+    <div class="viewport">
+        <div class="canvas" id="spaceCanvas">
 
-    <div class="room-wrapper" id="roomWrapper">
-        
-        <div class="room-scene">
-            
-            <div class="room-item toy"><img src="resources/images/toy.png" alt="Toy"></div>
-            <div class="room-item books"><img src="resources/images/books.png" alt="Books"></div>
-            
-            <div class="room-item socials" data-bs-toggle="modal" data-bs-target="#socialsModal">
-                <img src="resources/images/socials.png" alt="Socials">
-            </div>
-            <div class="room-item about" data-bs-toggle="modal" data-bs-target="#aboutModal">
-                <img src="resources/images/about.png" alt="About Me">
-            </div>
-
-            <div class="room-item contact" data-bs-toggle="modal" data-bs-target="#contactModal">
-                <img src="resources/images/contact.png" alt="Contact">
-            </div>
-
-
-            <div class="center-text-group">
-                <div class="d-flex flex-row justify-content-center alignment-text">
-                    <span class="p-1"><h1>Hi! I'm</h1></span>
-                    <span class="name p-1"><h1>Sei</h1></span>
+            <div class="center-content d-flex flex-row align-items-center">
+                <div class="d-flex flex-column">
+                    <div class="d-flex flex-row">
+                        <span class="p-1">
+                            <h1 style="font-size: 7rem;">Hi! I'm</h1>
+                        </span>
+                        <span class="name p-1">
+                            <h1 style="font-size: 7rem;">Sei</h1>
+                        </span>
+                    </div>
+                    <div class="welcome" style="font-size: 5rem;">
+                        <h4>Welcome to My Portfolio</h4>
+                    </div>
                 </div>
-                <div class="welcome text-center">
-                    <h4>Welcome to My Portfolio</h4>
-                </div>
-                <div class="explore text-center mt-3">
-                    <h5>Explore my room! Click on items</h5>
+                <div class="id">
+                    <img src="resources/images/id.png" alt="Profile" style="width: 550px; height: 650px;">
                 </div>
             </div>
 
-
-            <div class="room-item speaker"><img src="resources/images/speaker.png" alt="Speaker"></div>
-            <div class="room-item flower"><img src="resources/images/flower.png" alt="Flower"></div>
-            
-            <div class="room-item awards" data-bs-toggle="modal" data-bs-target="#awardsModal">
-                <img src="resources/images/awards.png" alt="Awards">
-            </div>
-
-            <div class="room-item projects" data-bs-toggle="modal" data-bs-target="#projectsModal">
-                <img src="resources/images/projects.png" alt="Projects">
-            </div>
-
-        </div>
-    </div>
-
-    <div class="modal fade" id="aboutModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">About Me</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col d-flex flex-row align-items-center flex-wrap">
-                            <div class="about-picture mx-auto mb-3">
-                                <img src="resources/images/about-profile.png" alt="Profile">
-                            </div>
-                            <div class="about-info p-4 fs-5 flex-grow-1">
-                                Hi, I’m Seito Tachibana but other people call me Sei. I am a second-year IT student studying in Polytechnic University of the Philippines Sto. Tomas Campus.
-                            </div>
+            <div class="right-content">
+                <div class="row align-items-center mb-5">
+                    <h1>About Me</h1>
+                    <div class="col-auto">
+                        <img src="resources/images/about-profile.png" alt="Profile"
+                            style="width: 150px; height: 150px;">
+                    </div>
+                    <div class="col">
+                        <div class="about-info p-4 fs-5">
+                            Hi, I’m Seito Tachibana but other people call me Sei. I am a second-year IT student studying
+                            in Polytechnic University of the Philippines Sto. Tomas Campus.
                         </div>
                     </div>
-                    <div class="skills-title text-center py-2">
-                        <h3>What I Do</h3>
+                </div>
+
+                <div class="skills d-flex flex-column gap-3">
+                    <div class="skill-card">
+                        <h4>Designing</h4>
+                        <p>I design user interfaces using Figma and Canva. I focus on creating clean visual hierarchies
+                            and seamless user journeys.</p>
                     </div>
-                    <div class="skills">
-                        <div class="row g-3 justify-content-center">
-                            <div class="col-md-4 d-flex">
-                                <div class="skill-card w-100">
-                                    <h4>Designing</h4>
-                                    <p>I design user interfaces using Figma and Canva. I focus on creating clean visual hierarchies and seamless user journeys.</p>
+                    <div class="skill-card">
+                        <h4>Front-end</h4>
+                        <p>I bring those visual layouts into interactive web pages using HTML, CSS, and JavaScript. I
+                            create games using Python, and I design clean user experiences.</p>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Back-end</h4>
+                        <p>I build secure server-side logic and manage relational databases using PHP and MySQL.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="top-section">
+                <div class="projects"><img src="resources/images/projects1.png" alt="project"
+                        style="width: 150px; height: 150px;"></div>
+                <div class="carousel-viewport">
+                    <button class="nav-arrow arrow-left" aria-label="Previous Project">&#10094;</button>
+                    <button class="nav-arrow arrow-right" aria-label="Next Project">&#10095;</button>
+
+                    <div class="carousel-window">
+                        <div class="carousel-track" id="carouselTrack">
+
+                            <div class="main-card">
+                                <div class="image-frame">
+                                    <img src="resources/images/oddysey.png">
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Oddyssey</h3>
+                                    <p class="card-description">Platformer game, built with Python and Pygame, features
+                                        smooth dashing, high jumping, and fun combat where you can defeat enemies to
+                                        clear each level.</p>
+                                    <div class="tech-badges">
+                                        <span class="badge-yellow">Python</span>
+                                        <span class="badge-green">Pygame</span>
+                                    </div>
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn btn-code">&lt;/&gt; View Code on GitHub</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 d-flex">
-                                <div class="skill-card w-100">
-                                    <h4>Front-end</h4>
-                                    <p>I bring those visual layouts into interactive web pages using HTML, CSS, and JavaScript. I create games using Python, and I design clean user experiences.</p>
+
+                            <div class="main-card">
+                                <div class="image-frame">
+                                    <img src="resources/images/horizon.png">
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Horizon</h3>
+                                    <p class="card-description">E-commerce website, selling cars and parts. Built with a
+                                        fully working database.</p>
+                                    <div class="tech-badges">
+                                        <span class="badge-yellow">HTML</span>
+                                        <span class="badge">CSS</span>
+                                        <span class="badge-yellow">Javascript</span>
+                                        <span class="badge">MySQL</span>
+                                    </div>
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn btn-code">&lt;/&gt; View Code on GitHub</a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 d-flex">
-                                <div class="skill-card w-100">
-                                    <h4>Back-end</h4>
-                                    <p>I build secure server-side logic and manage relational databases using PHP and MySQL.</p>
+
+                            <div class="main-card">
+                                <div class="image-frame">
+                                    <img src="resources/images/nexus.png">
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Nexus</h3>
+                                    <p class="card-description">E-commerce website, selling Nintendo console as well as
+                                        their respective video games. Built with a fully working database.</p>
+                                    <div class="tech-badges">
+                                        <span class="badge-purple">PHP</span>
+                                        <span class="badge">CSS</span>
+                                        <span class="badge-yellow">Javascript</span>
+                                        <span class="badge">MySQL</span>
+                                    </div>
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn btn-code">&lt;/&gt; View Code on GitHub</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="modal fade" id="socialsModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Socials</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-6 g-3 text-center justify-content-center">
-                        <div class="col"><img src="resources/images/facebook.png" style="width: 60px; height: 60px;"><p>Facebook</p></div>
-                        <div class="col"><img src="resources/images/instagram.png" style="width: 60px; height: 60px;"><p>Instagram</p></div>
-                        <div class="col"><img src="resources/images/linkin.png" style="width: 60px; height: 60px;"><p>LinkedIn</p></div>
-                        <div class="col"><img src="resources/images/github.png" style="width: 60px; height: 60px;"><p>Github</p></div>
-                        <div class="col"><img src="resources/images/x.png" style="width: 60px; height: 55px;"><p>X</p></div>
-                        <div class="col"><img src="resources/images/tiktok.png" style="width: 60px; height: 60px;"><p>Tiktok</p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Contacts</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="container d-flex flex-column align-items-center justify-content-center">
-                        <h2>Want to contact me? yay</h2>
-                        <div class="contact-info text-center p-3 text-muted">Need help or have feedback? Send a message for quick, dedicated support regarding any purchase or general inquiry.</div>
-                        <img src="resources/images/contact-me.png" alt="Contact graphics" class="img-fluid my-3" style="max-height: 200px;">
-                        <div class="second-container w-100 mt-2">
-                            <div class="row gap-3 justify-content-center text-center">
-                                <div class="col-md-5 d-flex flex-row align-items-center justify-content-center gap-2">
-                                    <img src="resources/images/gmail.png" alt="Gmail" style="width:30px;">
-                                    <h5 class="m-0">seitachi123@gmail.com</h5>
+                            <div class="main-card">
+                                <div class="image-frame">
+                                    <img src="resources/images/pawster.png">
                                 </div>
-                                <div class="col-md-5 d-flex flex-row align-items-center justify-content-center gap-2">
-                                    <img src="resources/images/phone.png" alt="Phone" style="width:30px;">
-                                    <h5 class="m-0">+63 9956313869</h5>
+                                <div class="card-content">
+                                    <h3 class="card-title">Pawster</h3>
+                                    <p class="card-description">E-commerce website, adopting, selling pet items, and
+                                        booking appointments.</p>
+                                    <div class="tech-badges">
+                                        <span class="badge-purple">PHP</span>
+                                        <span class="badge">CSS</span>
+                                        <span class="badge-yellow">Javascript</span>
+                                        <span class="badge">MySQL</span>
+                                    </div>
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn btn-code">&lt;/&gt; View Code on GitHub</a>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
+
+                <div class="carousel-indicators">
+                    <span class="indicator-dot"></span>
+                    <span class="indicator-dot"></span>
+                    <span class="indicator-dot"></span>
+                </div>
             </div>
-        </div>
+
+            <div class="left-section">
+                <div class="socials">
+                    <h1 style="font-size: 5rem;">Socials</h1>
+                </div>
+                <div class="pin-container" style="transform: rotate(3deg);">
+        <a href="https://www.instagram.com/seii_12/?hl=en" target="_blank">
+            <div class="insta">
+                <img src="resources/images/insta1.png" style="width: 150px; height: 150px;">
+            </div>
+        </a>
     </div>
 
-    <div class="modal fade" id="awardsModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Awards</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="container d-flex flex-column align-items-center justify-content-center p-5">
-                        <img src="resources/images/underconstruct.png" alt="Under Construction" class="img-fluid mb-3" style="max-width: 150px;">
-                        <h2>Under Construction</h2>
-                    </div>
-                </div>
+    <div class="pin-container" style="transform: rotate(-5deg);">
+        <a href="https://www.facebook.com/seeiiiiii" target="_blank">
+            <div class="facebook">
+                <img src="resources/images/facebook1.png" style="width: 150px; height: 150px;">
             </div>
-        </div>
+        </a>
     </div>
 
-    <div class="modal fade" id="projectsModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Projects</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <div class="container mb-4">
-                        <div class="row align-items-start">
-                            <div class="col-auto"><div class="game-pic"><img src="resources/images/oddysey.png" alt="Odyssey" style="width:80px; border-radius:8px;"></div></div>
-                            <div class="col">
-                                <div class="game-title"><h2>Oddysey</h2></div>
-                                <div class="game-desc"><p>Platformer game, built with Python and Pygame, features smooth dashing, high jumping, and fun combat where you can defeat enemies to clear each level.</p></div>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>
-                    <div class="container mb-4">
-                        <div class="row align-items-start">
-                            <div class="col-auto"><div class="game-pic"><img src="resources/images/nexus.png" alt="Nexus" style="width:80px; border-radius:8px;"></div></div>
-                            <div class="col">
-                                <div class="game-title"><h2>Nexus</h2></div>
-                                <div class="game-desc"><p>E-commerce website, selling Nintendo console as well as their respective video games. Built with a fully working database.</p></div>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>
-                    <div class="container mb-4">
-                        <div class="row align-items-start">
-                            <div class="col-auto"><div class="game-pic"><img src="resources/images/horizon.png" alt="Horizon" style="width:80px; border-radius:8px;"></div></div>
-                            <div class="col">
-                                <div class="game-title"><h2>Horizon</h2></div>
-                                <div class="game-desc"><p>E-commerce website, selling cars and parts. Built with a fully working database.</p></div>
-                            </div>
-                        </div>
-                        <hr>
-                    </div>
-                    <div class="container">
-                        <div class="row align-items-start">
-                            <div class="col-auto"><div class="game-pic"><img src="resources/images/pawster.png" alt="Pawster" style="width:80px; border-radius:8px;"></div></div>
-                            <div class="col">
-                                <div class="game-title"><h2>Pawster</h2></div>
-                                <div class="game-desc"><p>E-commerce website, adopting, selling pet items, and booking appointments.</p></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="pin-container" style="transform: rotate(-2deg);">
+        <a href="https://x.com/Seitooww" target="_blank">
+            <div class="x">
+                <img src="resources/images/x1.png" style="width: 170px; height: 170px;">
             </div>
+        </a>
+    </div>
+
+    <div class="pin-container" style="transform: rotate(-3deg);">
+        <a href="https://github.com/Seeeiiiii" target="_blank">
+            <div class="github">
+                <img src="resources/images/github1.png" style="width: 170px; height: 170px;">
+            </div>
+        </a>
+    </div>
+
+    <div class="pin-container" style="transform: rotate(2deg);">
+        <a href="https://www.tiktok.com/@seeiiiii" target="_blank">
+            <div class="tiktok">
+                <img src="resources/images/tiktok1.png" style="width: 150px; height: 150px;">
+            </div>
+        </a>
+    </div>
+
+    <div class="pin-container" style="transform: rotate(19deg);">
+        <a href="mailto:seitachi123@gmail.com?subject=Contact%20from%20Portfolio">
+            <div class="gmail">
+                <img src="resources/images/gmail1.png" style="width: 150px; height: 150px;">
+            </div>
+        </a>
+    </div>
+            </div>
+
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const wrapper = document.getElementById('roomWrapper');
-        const btnLeft = document.getElementById('slideLeft');
-        const btnRight = document.getElementById('slideRight');
-
-        // Target locations: 0 = Left side shelves, 1 = Center text middle, 2 = Right side shelves
-        let currentTargetIndex = 1;
-
-        window.addEventListener('load', () => {
-            centerTheView();
-            updateArrowVisibility();
-        });
-
-        window.addEventListener('resize', () => {
-            if (currentTargetIndex === 1) centerTheView();
-            updateArrowVisibility();
-        });
-
-        function centerTheView() {
-            const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
-            wrapper.scrollLeft = maxScroll / 2;
-            currentTargetIndex = 1;
-        }
-
-        btnRight.addEventListener('click', () => {
-            const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
-            if (currentTargetIndex === 0) {
-                wrapper.scrollTo({ left: maxScroll / 2, behavior: 'smooth' });
-                currentTargetIndex = 1;
-            } else if (currentTargetIndex === 1) {
-                wrapper.scrollTo({ left: maxScroll, behavior: 'smooth' });
-                currentTargetIndex = 2;
-            }
-        });
-
-        btnLeft.addEventListener('click', () => {
-            const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
-            if (currentTargetIndex === 2) {
-                wrapper.scrollTo({ left: maxScroll / 2, behavior: 'smooth' });
-                currentTargetIndex = 1;
-            } else if (currentTargetIndex === 1) {
-                wrapper.scrollTo({ left: 0, behavior: 'smooth' });
-                currentTargetIndex = 0;
-            }
-        });
-
-        wrapper.addEventListener('scroll', updateArrowVisibility);
-
-        function updateArrowVisibility() {
-            if (wrapper.scrollWidth > wrapper.clientWidth) {
-                const currentScroll = wrapper.scrollLeft;
-                const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
-
-                btnLeft.style.display = currentScroll <= 15 ? 'none' : 'block';
-                btnRight.style.display = currentScroll >= maxScroll - 15 ? 'none' : 'block';
-            } else {
-                btnLeft.style.display = 'none';
-                btnRight.style.display = 'none';
-            }
-        }
-    </script>
+    <div class="nav-arrows">
+        <button class="nav-btn-up" aria-label="Move up">▲</button>
+        <button class="nav-btn-left" aria-label="Move left">◀</button>
+        <button class="nav-btn-home" aria-label="Go to center">⌂</button>
+        <button class="nav-btn-right" aria-label="Move right">▶</button>
+        <button class="nav-btn-down" aria-label="Move down">▼</button>
+    </div>
 </body>
+
 </html>
