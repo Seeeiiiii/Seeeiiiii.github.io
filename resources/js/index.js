@@ -1,29 +1,43 @@
 window.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('spaceCanvas');
     const STEP = 2000;
+    
+    // KEEP THIS 6000 for your layout/canvas, 
+    // but change these two values to where your content actually ends.
+    const LIMIT_WIDTH = 6000; 
+    const LIMIT_HEIGHT = 6000;
 
-    const canvasCenterX = 6000 / 2;
-    const canvasCenterY = 6000 / 2;
-
-    let offsetX = canvasCenterX - (window.innerWidth / 2);
-    let offsetY = canvasCenterY - (window.innerHeight / 2);
+    // Start in the middle of your layout
+    let offsetX = (6000 / 2) - (window.innerWidth / 2);
+    let offsetY = (6000 / 2) - (window.innerHeight / 2);
 
     const homeX = offsetX;
     const homeY = offsetY;
 
-    const CANVAS_SIZE = 6000;
-
     function applyPosition() {
-        const maxX = CANVAS_SIZE - window.innerWidth;
-        const maxY = CANVAS_SIZE - window.innerHeight;
+        // Enforce the limits based on your custom content bounds
+        // If content is 4000px wide, user can't scroll past the 4000px mark
+        const maxX = LIMIT_WIDTH - window.innerWidth;
+        const maxY = LIMIT_HEIGHT - window.innerHeight;
+        
+        // Clamp to 0 (top/left) and your limit (bottom/right)
         offsetX = Math.max(0, Math.min(offsetX, maxX));
         offsetY = Math.max(0, Math.min(offsetY, maxY));
+        
         canvas.style.transform = `translate(-${offsetX}px, -${offsetY}px)`;
     }
 
     applyPosition();
 
-    // --- Navigation ---
+    // Two-Finger Trackpad Panning
+    canvas.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        offsetX += e.deltaX;
+        offsetY += e.deltaY;
+        applyPosition();
+    }, { passive: false });
+
+    // --- Navigation Buttons ---
     const moves = {
         '.nav-btn-up':    () => { offsetY -= STEP; },
         '.nav-btn-down':  () => { offsetY += STEP; },
@@ -42,6 +56,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- Keyboard Navigation ---
     window.addEventListener('keydown', (e) => {
         const keyMap = {
             ArrowUp:    () => { offsetY -= STEP; },
@@ -55,14 +70,6 @@ window.addEventListener('DOMContentLoaded', () => {
             applyPosition();
         }
     });
-
-    // --- Two-Finger Scroll/Pan Logic (Replaces old drag) ---
-    canvas.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        offsetX += e.deltaX;
-        offsetY += e.deltaY;
-        applyPosition();
-    }, { passive: false });
 
     // --- Carousel Controller ---
     const track = document.getElementById('carouselTrack');
