@@ -27,6 +27,12 @@ body {
     background-image: radial-gradient(#e0e0e0 1.5px, transparent 1.5px);
     background-size: 24px 24px;
     transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: grab;
+    will-change: transform;
+}
+
+.canvas:active {
+    cursor: grabbing;
 }
 
 /* Dead center positioning for your starting "Me" section */
@@ -607,3 +613,4 @@ body {
 .award-modal-overlay.open .cert-popup-img {
     transform: scale(1);
 }
+

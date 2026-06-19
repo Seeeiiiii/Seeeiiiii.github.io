@@ -23,6 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     applyPosition();
 
+    // --- Navigation ---
     const moves = {
         '.nav-btn-up':    () => { offsetY -= STEP; },
         '.nav-btn-down':  () => { offsetY += STEP; },
@@ -55,15 +56,21 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ==========================================================================
-    // 3D STACK LAYER CAROUSEL CONTROLLER
-    // ==========================================================================
+    // --- Two-Finger Scroll/Pan Logic (Replaces old drag) ---
+    canvas.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        offsetX += e.deltaX;
+        offsetY += e.deltaY;
+        applyPosition();
+    }, { passive: false });
+
+    // --- Carousel Controller ---
     const track = document.getElementById('carouselTrack');
     const prevArrow = document.querySelector('.arrow-left');
     const nextArrow = document.querySelector('.arrow-right');
     const indicatorDots = document.querySelectorAll('.indicator-dot');
     
-    let currentSlideIndex = 1; // Default to E-Commerce center focus
+    let currentSlideIndex = 1;
 
     function updateStackLayout(activeIndex) {
         if (!track) return;
@@ -71,10 +78,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const totalCards = cards.length;
 
         cards.forEach((card, i) => {
-            // Clean up old positional layout classes
             card.classList.remove('active', 'prev', 'next');
-
-            // Calculate loop wrapping indices safely
             const prevIndex = (activeIndex - 1 + totalCards) % totalCards;
             const nextIndex = (activeIndex + 1) % totalCards;
 
@@ -87,21 +91,18 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Sync indicator tracking dots
         indicatorDots.forEach(dot => dot.classList.remove('active'));
         if (indicatorDots[activeIndex]) {
             indicatorDots[activeIndex].classList.add('active');
         }
-
         currentSlideIndex = activeIndex;
     }
 
-    // Initialize layout position tracking
     updateStackLayout(currentSlideIndex);
 
     if (prevArrow && nextArrow) {
         prevArrow.addEventListener('click', (e) => {
-            e.stopPropagation(); // Stops event from drifting your layout canvas
+            e.stopPropagation();
             const cards = track.querySelectorAll('.main-card');
             let target = (currentSlideIndex - 1 + cards.length) % cards.length;
             updateStackLayout(target);
@@ -122,21 +123,3 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
-let isDragging = false;
-let startX, startY;
-let initialOffsetX, initialOffsetY;
-
-// Add this to your DOMContentLoaded block
-canvas.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    // Capture initial mouse position
-    startX = e.clientX;
-    startY = e.clientY;
-    // Capture the state of the canvas offsets at the moment of click
-    initialOffsetX = offsetX;
-    initialOffsetY = offsetY;
-    
-    canvas.style.cursor = 'grabbing';
-});
-
