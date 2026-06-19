@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('spaceCanvas');
-    const STEP = 500;
+    const STEP = 2000;
 
     const canvasCenterX = 6000 / 2;
     const canvasCenterY = 6000 / 2;
@@ -122,3 +122,21 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+let isDragging = false;
+let startX, startY;
+let initialOffsetX, initialOffsetY;
+
+// Add this to your DOMContentLoaded block
+canvas.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    // Capture initial mouse position
+    startX = e.clientX;
+    startY = e.clientY;
+    // Capture the state of the canvas offsets at the moment of click
+    initialOffsetX = offsetX;
+    initialOffsetY = offsetY;
+    
+    canvas.style.cursor = 'grabbing';
+});
+

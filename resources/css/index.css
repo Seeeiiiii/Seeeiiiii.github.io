@@ -112,7 +112,7 @@ body {
 .right-content {
     position: absolute;
     top: 50%;
-    left: 87%;
+    left: 84%;
     transform: translate(-50%, -50%);
     width: 800px;
     text-align: left;
@@ -160,7 +160,7 @@ body {
 
 .top-section {
     position: absolute;
-    top: 30%;
+    top: 17%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 1200px;
@@ -459,4 +459,151 @@ body {
     position: absolute;
     bottom: 280%;
     left: 950px;
+}
+
+.nav-btn-up:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* ===== Awards Data-Flow Diagram (bottom-section) ===== */
+
+.bottom-section {
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1400px;
+    padding: 4rem 0 6rem;
+    text-align: center;
+}
+
+.awards-heading {
+    margin-bottom: 3rem;
+}
+
+.flow-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: nowrap;
+}
+
+.flow-node {
+    width: 300px;
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.08);
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.flow-node:hover,
+.flow-node:focus-visible {
+    transform: translateY(-6px);
+    box-shadow: 8px 14px 20px rgba(0, 0, 0, 0.14);
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+.flow-node.node-yellow {
+    background-color: #fff9c4;
+}
+
+.flow-node.node-pink {
+    background-color: #f8bbd0;
+}
+
+.flow-node.node-blue {
+    background-color: #b3e5fc;
+}
+
+.flow-node-icon {
+    width: 90px;
+    height: 90px;
+    background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.flow-node-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.flow-node-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.flow-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #777;
+}
+
+.flow-node-label h4 {
+    margin: 0;
+    font-size: 1.15rem;
+    color: #1a1a1a;
+}
+
+.flow-node-label p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.flow-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 100px;
+}
+
+/* Certificate image popup */
+
+.award-modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 2000;
+}
+
+.award-modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cert-popup-img {
+    max-width: 85vw;
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+    cursor: default;
+}
+
+.award-modal-overlay.open .cert-popup-img {
+    transform: scale(1);
 }
