@@ -34,6 +34,13 @@
                     <div class="welcome" style="font-size: 5rem;">
                         <h4>Welcome to My Portfolio</h4>
                     </div>
+
+                    <div class="scroll-hint text-center mt-4">
+                        <h4 class="scroll-hint-text">
+                            Scroll or use arrow keys to <span class="wave-text">move around !</span>
+                        </h4>
+                    </div>
+
                 </div>
                 <div class="id">
                     <img src="resources/images/id.png" alt="Profile" style="width: 550px; height: 650px;">
@@ -363,6 +370,13 @@
                 if (e.key === "Escape") closeModal();
             });
         })();
+
+        document.querySelectorAll('.wave-text').forEach(el => {
+            const text = el.textContent;
+            el.innerHTML = text.split('').map((letter, i) =>
+                `<span style="animation-delay: ${i * 0.1}s">${letter}</span>`
+            ).join('');
+        });
     </script>
 </body>
 

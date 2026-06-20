@@ -108,6 +108,41 @@ body {
     grid-area: down;
 }
 
+.scroll-hint-text {
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #2b2b2b;
+}
+.wave-text {
+    display: inline-block;
+    color: #f5a623;
+    font-weight: 700;
+}
+.wave-text span {
+    display: inline-block;
+    animation: wave-bounce 1.2s ease-in-out infinite;
+}
+
+.scroll-hint-text {
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #2b2b2b;
+}
+.wave-text {
+    display: inline-block;
+    color: #f5a623;
+    font-weight: 700;
+}
+.wave-text span {
+    display: inline-block;
+    animation: wave-bounce 1.2s ease-in-out infinite;
+}
+@keyframes wave-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+
 .right-content {
     position: absolute;
     top: 50%;
