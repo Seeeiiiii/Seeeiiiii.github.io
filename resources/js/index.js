@@ -1,13 +1,10 @@
 window.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('spaceCanvas');
     const STEP = 2000;
-    
-    // KEEP THIS 6000 for your layout/canvas, 
-    // but change these two values to where your content actually ends.
+
     const LIMIT_WIDTH = 6000; 
     const LIMIT_HEIGHT = 6000;
 
-    // Start in the middle of your layout
     let offsetX = (6000 / 2) - (window.innerWidth / 2);
     let offsetY = (6000 / 2) - (window.innerHeight / 2);
 
@@ -15,12 +12,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const homeY = offsetY;
 
     function applyPosition() {
-        // Enforce the limits based on your custom content bounds
-        // If content is 4000px wide, user can't scroll past the 4000px mark
         const maxX = LIMIT_WIDTH - window.innerWidth;
         const maxY = LIMIT_HEIGHT - window.innerHeight;
         
-        // Clamp to 0 (top/left) and your limit (bottom/right)
+
         offsetX = Math.max(0, Math.min(offsetX, maxX));
         offsetY = Math.max(0, Math.min(offsetY, maxY));
         
@@ -37,7 +32,6 @@ window.addEventListener('DOMContentLoaded', () => {
         applyPosition();
     }, { passive: false });
 
-    // --- Navigation Buttons ---
     const moves = {
         '.nav-btn-up':    () => { offsetY -= STEP; },
         '.nav-btn-down':  () => { offsetY += STEP; },
@@ -56,7 +50,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Keyboard Navigation ---
     window.addEventListener('keydown', (e) => {
         const keyMap = {
             ArrowUp:    () => { offsetY -= STEP; },
@@ -130,3 +123,4 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
