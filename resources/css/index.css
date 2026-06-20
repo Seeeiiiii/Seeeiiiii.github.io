@@ -610,3 +610,26 @@ body {
     transform: scale(1);
 }
 
+.arrow {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+}
+
+.arrow1 {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+}
+
+.arrow2 {
+    position: absolute;
+    top: 15%;
+    right: 15%;
+}
+
+.arrow3 {
+    position: absolute;
+    bottom: 15%;
+    right: 15%;
+}
